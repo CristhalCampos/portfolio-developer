@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+/* Variables para modo claro */
+:root {
+  --color-background: #f2f2f2;
+  --color-foreground: #171717;
+  --blue: #1f8ff5;
+  --orange: #fe735e;
+
+  /* Fuentes */
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: monospace;
+}
+
+/* Variables para modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #1e1e1e;
+    --color-foreground: #ededed;
+  }
+}
+
+/* Aplicar variables al body */
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bg-blue {
+  background-color: var(--blue);
+}
+
+.bg-orange {
+  background-color: var(--orange);
+}
+
+.text-blue {
+  color: var(--blue);
+}
+
+.text-orange {
+  color: var(--orange);
+}
+
+/* Animaciones diagonales */
+@keyframes diagonal {
+  0% {
+    transform: translateY(-100%) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(100%) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.animate-diagonal {
+  animation: diagonal 8s linear infinite;
+  transform: rotate(45deg);
+  opacity: 0.2;
+}
+
+/* Animación de deslizamiento */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide {
+  animation: slide 30s linear infinite;
+}
