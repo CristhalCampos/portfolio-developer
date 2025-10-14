@@ -5,15 +5,16 @@ import { createContext, useContext, useEffect, useState } from 'react';
 const ThemeContext = createContext();
 
 export const ThemeContextProvider = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(undefined);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    setDarkMode(savedTheme === 'dark');
+    const isDark = savedTheme === 'dark';
+    setDarkMode(isDark);
+    document.documentElement.classList.toggle('dark', isDark);
   }, []);
 
   useEffect(() => {
-    if (darkMode === undefined) return;
     document.documentElement.classList.toggle('dark', darkMode);
     localStorage.setItem('theme', darkMode ? 'dark' : 'light');
   }, [darkMode]);

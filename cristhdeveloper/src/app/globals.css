@@ -1,47 +1,45 @@
 @import "tailwindcss";
 
-/* Variables para modo claro */
+/* Variables para modo CLARO (Por defecto) */
 :root {
-  --color-background: #f2f2f2;
-  --color-foreground: #171717;
-  --blue: #1f8ff5;
-  --orange: #fe735e;
-
+  /* Fondo y Primer Plano (Texto) */
+  --color-background: #f2f2f2; /* Tu fondo claro */
+  --color-bg-secondary: #bdbdbd;
+  --color-foreground: #171717; /* Tu color de texto/primer plano principal */
+  --color-fg-secondary: #424242;
+  /* Colores Principales (Títulos, Botones, Acentos) */
+  --color-primary: #1f8ff5;     /* Azul (Tu color principal en modo claro) */
+  --color-secondary: #fe735e;   /* Naranja/Rojo (Tu color de acento en modo claro) */
+  /* Variantes para HOVER/DARKER (Modo Claro) */
+  --color-primary-darker: #1067d3; /* Azul más oscuro para hover */
+  --color-secondary-darker: #f5573e; /* Naranja/Rojo más oscuro para hover */
   /* Fuentes */
-  --font-sans: Arial, Helvetica, sans-serif;
-  --font-mono: monospace;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-/* Variables para modo oscuro */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: #1e1e1e;
-    --color-foreground: #ededed;
-  }
+/* Variables para modo OSCURO (Cuando la clase 'dark' está presente) */
+.dark {
+  /* Fondo y Primer Plano (Texto) */
+  --color-background: #1e1e1e; /* Fondo oscuro (Usaste 1f1f1f en JS, pero aquí tomo 1e1e1e de tu globals original) */
+  --color-bg-secondary: #424242;
+  --color-foreground: #ededed; /* Color de texto/primer plano en oscuro */
+  --color-fg-secondary: #bdbdbd;
+  /* Colores Principales (Títulos, Botones, Acentos) */
+  --color-primary: #fe735e;     /* Naranja/Rojo (Tu color principal en modo oscuro) */
+  --color-secondary: #1f8ff5;   /* Azul (Tu color de acento en modo oscuro, invertido) */
+  /* Variantes para HOVER/DARKER (Modo Oscuro) */
+  --color-primary-darker: #f5573e; /* Naranja/Rojo más oscuro para hover */
+  --color-secondary-darker: #1067d3; /* Azul más oscuro para hover */
 }
 
-/* Aplicar variables al body */
+/* Aplicación de Variables en el body para transiciones globales */
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-sans);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.bg-blue {
-  background-color: var(--blue);
-}
-
-.bg-orange {
-  background-color: var(--orange);
-}
-
-.text-blue {
-  color: var(--blue);
-}
-
-.text-orange {
-  color: var(--orange);
+  transition: background-color 0.5s ease, color 0.5s ease;
+  min-height: 100vh;
 }
 
 /* Animaciones diagonales */
@@ -60,21 +58,20 @@ body {
 }
 
 .animate-diagonal {
-  animation: diagonal 8s linear infinite;
+  animation: diagonal 12s linear infinite;
   transform: rotate(45deg);
   opacity: 0.2;
 }
 
+
+
 /* Animación de deslizamiento */
 @keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-slide {
-  animation: slide 30s linear infinite;
+  display: flex;
+  animation: slide 50s linear infinite;
 }
