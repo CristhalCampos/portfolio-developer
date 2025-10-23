@@ -5,4 +5,16 @@ export const certificationsData = [
     date: "2024 - 2025",
     image: "/certifications/fullstack.png",
   },
+  {
+    title: "Javascript (Intermediate)",
+    institution: "Hacker Rank",
+    date: "2025",
+    image: "/certifications/jsintermed.png",
+  },
+  {
+    title: "Inteligencia Artificial",
+    institution: "EGG",
+    date: "2025",
+    image: "/certifications/iacertificat.png",
+  },
 ];

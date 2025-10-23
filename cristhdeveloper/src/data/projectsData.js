@@ -12,6 +12,21 @@ export const projectsData = [
   {
     title: 'PokeSite', description: 'Sitio web de pokemons usando API.',
     image: '/projects/pokemon.png', repo: 'https://github.com/CristhalCampos/pokemon',
-    tech: ['HTML', 'CSS', 'Javascript', 'API'], type: 'Frontend'
+    tech: ['HTML', 'CSS', 'Javascript', 'API']
+  },
+  {
+    title: 'ProyectoPHP', description: 'Tienda en línea básica con PHP y MySQL.',
+    image: '/projects/proyectoPHP.png', repo: 'https://github.com/CristhalCampos/proyectoPHP',
+    tech: ['php', 'MySQL']
+  },
+  {
+    title: 'Bot de Telegram', description: 'Sistema de gestión de productos.',
+    image: '/projects/sistemagestion.jpg', repo: 'https://github.com/CristhalCampos/Bot-Telegram',
+    tech: ['Python']
+  },
+  {
+    title: 'MentorIA', description: 'Plataforma de apoyo estudiantil con IA.',
+    image: '/projects/mentoria.png', repo: 'https://github.com/CristhalCampos/MentorIA',
+    tech: ['Next,js', 'TailwindCSS', 'Supabase', 'OpenAI']
   },
 ];

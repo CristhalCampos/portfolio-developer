@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import ScrollButtons from '../ScrollButtons';
 import { useState } from 'react';
+import Footer from '../Footer';
 
 export function ContactSection({ id }) {
   const [sent, setSent] = useState(false);
@@ -44,7 +44,7 @@ export function ContactSection({ id }) {
   return (
     <motion.section
       id={id}
-      className="snap-start h-screen flex flex-col items-center justify-center px-8 sm:px-12 md:px-20 text-center relative"
+      className="min-h-screen flex flex-col gap-10 items-center justify-center px-8 sm:px-12 md:px-20 text-center"
       initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -110,8 +110,8 @@ export function ContactSection({ id }) {
           </div>
         )}
       </div>
-
-      <ScrollButtons prev="#projects" />
+      
+      <Footer />
     </motion.section>
   );
 }

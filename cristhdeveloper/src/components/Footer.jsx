@@ -8,11 +8,11 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bottom-0 left-0 w-full md:pl-60 bg-[var(--color-background)] text-[var(--color-foreground)] border-t border-[var(--color-bg-secondary)] py-6 text-center relative">
+    <footer className="bottom-0 w-full bg-[var(--color-background)] text-[var(--color-foreground)] border-t border-[var(--color-bg-secondary)] py-6 text-center relative">
       <p className="text-sm opacity-80">© {new Date().getFullYear()} CristhDeveloper - Todos los derechos reservados.</p>
       <button
         onClick={scrollTop}
-        className="absolute right-6 bottom-6 bg-[var(--color-primary)] hover:bg-[var(--color-primary-darker)] text-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform"
+        className="absolute right-0 bottom-6 bg-[var(--color-primary)] hover:bg-[var(--color-primary-darker)] text-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform"
       >
         <ArrowUpIcon className="w-4 h-4" />
       </button>

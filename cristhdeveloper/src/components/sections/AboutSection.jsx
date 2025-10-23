@@ -2,14 +2,13 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import ScrollButtons from '../ScrollButtons';
 import { TechnologiesSection } from './TechnologiesSection';
 
 export function AboutSection({ id }) {
   return (
     <motion.section
       id={id}
-      className="snap-start h-screen flex flex-col items-center justify-center px-8 text-center relative"
+      className="min-h-screen flex flex-col items-center justify-center px-8 text-center"
       initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -33,13 +32,12 @@ export function AboutSection({ id }) {
 
           <div className="text-sm md:text-lg leading-relaxed text-left space-y-2">
             <p>
-              Hola, me llamo <strong className='text-[var(--color-fg-secondary)]'>Cristhal</strong> pero me dicen <strong className='text-[var(--color-fg-secondary)]'>Cristh</strong>.
-              Mi formación principal es la <strong className='text-[var(--color-fg-secondary)]'>Ingeniería Química</strong>, un campo que me ha enseñado
-              el valor del pensamiento analítico y la resolución de problemas complejos.
+              Hola, me llamo <strong className='text-[var(--color-fg-secondary)]'>Cristhal Campos</strong> pero me dicen Cristh.
+              Como Ingeniero Químico, aprendí el valor del pensamiento analítico y la resolución de problemas complejos.
             </p>
             <p>
-              Hace dos años, esa pasión por la lógica y la creación se fusionó con el mundo digital.
-              Desde entonces, he dedicado mi tiempo libre a formarme en el <strong className='text-[var(--color-fg-secondary)]'>Desarrollo Web FullStack</strong>, especialmente en el stack <strong className='text-[var(--color-fg-secondary)]'>MERN</strong> (MongoDB, Express, React, Node.js) y <strong className='text-[var(--color-fg-secondary)]'>Next.js</strong>..
+              Hace dos años, eso se fusionó con el mundo digital.
+              Desde entonces, he dedicado mi tiempo libre a formarme en el <strong className='text-[var(--color-fg-secondary)]'>Desarrollo Web FullStack</strong>, especialmente en el stack MERN (MongoDB, Express, React, Node.js) y Next.js + Supabase.
             </p>
           </div>
         </div>
@@ -49,7 +47,6 @@ export function AboutSection({ id }) {
         </div>
       </div>
 
-      <ScrollButtons prev="#home" next="#projects" />
     </motion.section>
   );
 }
