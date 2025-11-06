@@ -44,7 +44,7 @@ export function ContactSection({ id }) {
   return (
     <motion.section
       id={id}
-      className="min-h-screen flex flex-col gap-10 items-center justify-center px-8 sm:px-12 md:px-20 text-center"
+      className="min-h-screen flex flex-col gap-10 items-center justify-center px-8 py-4 sm:px-12 md:px-20 text-center"
       initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}

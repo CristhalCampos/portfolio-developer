@@ -8,7 +8,7 @@ export function AboutSection({ id }) {
   return (
     <motion.section
       id={id}
-      className="min-h-screen flex flex-col items-center justify-center px-8 text-center"
+      className="min-h-screen flex flex-col items-center justify-center px-8 pb-4 text-center"
       initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -32,7 +32,7 @@ export function AboutSection({ id }) {
 
           <div className="text-sm md:text-lg leading-relaxed text-left space-y-2">
             <p>
-              Hola, me llamo <strong className='text-[var(--color-fg-secondary)]'>Cristhal Campos</strong> pero me dicen Cristh.
+              Hola, me llamo <strong className='text-[var(--color-fg-secondary)]'>Cristhal Campos</strong>.
               Como Ingeniero Químico, aprendí el valor del pensamiento analítico y la resolución de problemas complejos.
             </p>
             <p>

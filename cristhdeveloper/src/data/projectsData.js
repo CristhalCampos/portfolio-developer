@@ -21,7 +21,7 @@ export const projectsData = [
   },
   {
     title: 'Bot de Telegram', description: 'Sistema de gestión de productos.',
-    image: '/projects/sistemagestion.jpg', repo: 'https://github.com/CristhalCampos/Bot-Telegram',
+    image: '/projects/sistemagestion.jpeg', repo: 'https://github.com/CristhalCampos/Bot-Telegram',
     tech: ['Python']
   },
   {

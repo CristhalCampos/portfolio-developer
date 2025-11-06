@@ -1,5 +1,11 @@
 export const certificationsData = [
   {
+    title: "Programación desde Cero",
+    institution: "EGG",
+    date: "2023",
+    image: "/certifications/desdecero.jpg",
+  },
+  {
     title: "Programación Web",
     institution: "LEXPIN",
     date: "2024 - 2025",
@@ -16,5 +22,11 @@ export const certificationsData = [
     institution: "EGG",
     date: "2025",
     image: "/certifications/iacertificat.png",
+  },
+  {
+    title: "WordPress",
+    institution: "LEXPIN",
+    date: "2024",
+    image: "/certifications/wordpress.png",
   },
 ];

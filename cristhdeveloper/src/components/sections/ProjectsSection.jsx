@@ -17,7 +17,7 @@ export function ProjectsSection({ id }) {
   return (
     <motion.section
       id={id}
-      className="min-h-[85vh] flex flex-col items-center justify-center px-6 md:px-10 text-center relative"
+      className="min-h-[85vh] flex flex-col items-center justify-center px-6 py-4 md:px-10 text-center relative"
       initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
