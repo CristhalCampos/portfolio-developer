@@ -50,28 +50,29 @@ export function ContactSection({ id }) {
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <div className="w-full max-w-xl sm:max-w-2xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-[var(--color-primary)]">
+        <p>¿Te interesa colaborar o conocer más sobre mi trabajo?</p>
+        <h2 className="text-xl sm:text-2xl md:text-5xl font-bold mb-4 sm:mb-6 text-[var(--color-primary)]">
           ¡Hablemos!
         </h2>
 
         {!sent ? (
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
             <div>
-              <label htmlFor="name" className="block mb-1 font-medium text-sm sm:text-base text-[var(--color-fg-secondary)]">
+              <label htmlFor="name" className="block mb-1 font-medium text-sm sm:text-base text-gray-500">
                 Tu Nombre
               </label>
               <input type="text" id="name" name="name" required className={`${inputStyle} text-sm sm:text-base`} />
             </div>
 
             <div>
-              <label htmlFor="email" className="block mb-1 font-medium text-sm sm:text-base text-[var(--color-fg-secondary)]">
+              <label htmlFor="email" className="block mb-1 font-medium text-sm sm:text-base text-gray-500">
                 Tu Correo Electrónico
               </label>
               <input type="email" id="email" name="_replyto" required className={`${inputStyle} text-sm sm:text-base`} />
             </div>
 
             <div>
-              <label htmlFor="message" className="block mb-1 font-medium text-sm sm:text-base text-[var(--color-fg-secondary)]">
+              <label htmlFor="message" className="block mb-1 font-medium text-sm sm:text-base text-gray-500">
                 Mensaje
               </label>
               <textarea

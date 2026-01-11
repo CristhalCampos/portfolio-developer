@@ -1,42 +1,51 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import ProjectCard from '../ProjectCard';
 import { projectsData } from '../../data/projectsData';
 
 export function ProjectsSection({ id }) {
   const [activeFilter, setActiveFilter] = useState('All');
-  const uniqueTechs = ['All', ...new Set(projectsData.flatMap((p) => p.tech))];
+  
+  const uniqueTechs = useMemo(() => 
+    ['All', ...new Set(projectsData.flatMap((p) => p.tech))], 
+  []);
 
   const filteredProjects = useMemo(() => {
-    if (activeFilter === 'All') return projectsData;
-    return projectsData.filter((p) => p.tech.includes(activeFilter));
+    let filtered = projectsData;
+    if (activeFilter !== 'All') {
+      filtered = projectsData.filter((p) => p.tech.includes(activeFilter));
+    }
+    // Ordenar para que los "featured" salgan primero
+    return [...filtered].sort((a, b) => (b.featured ? 1 : -1));
   }, [activeFilter]);
 
   return (
     <motion.section
       id={id}
-      className="min-h-[85vh] flex flex-col items-center justify-center px-6 py-4 md:px-10 text-center relative"
-      initial={{ opacity: 0, y: 80 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      className="min-h-screen py-20 px-6 bg-[var(--color-bg)]"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
     >
-      <div className="max-w-6xl mx-auto text-center">
-        <h1 className="text-3xl md:text-5xl font-bold mb-10 text-[var(--color-primary)]">
-          Mis Proyectos
-        </h1>
+      <div className="max-w-7xl mx-auto">
+        <header className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-[var(--color-primary)]">
+            Mis Proyectos
+          </h2>
+        </header>
 
-        {/* FILTROS */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
+        {/* FILTROS ESTILIZADOS */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
           {uniqueTechs.map((tech) => (
             <button
               key={tech}
               onClick={() => setActiveFilter(tech)}
-              className={`px-3 sm:px-5 py-1 sm:py-1.5 text-xs sm:text-sm font-semibold rounded-full transition-all duration-300 ${
+              className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 transform active:scale-95 ${
                 tech === activeFilter
-                  ? 'bg-[var(--color-primary)] text-white shadow-md'
-                  : 'border border-[var(--color-secondary)] text-[var(--color-secondary)] hover:bg-[var(--color-secondary)] hover:text-white'
+                  ? 'bg-[var(--color-primary)] text-white shadow-lg'
+                  : 'bg-[var(--color-bg-primary)] border border-[var(--color-bg-primary)] text-[var(--color-bg-primary)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]'
               }`}
             >
               {tech}
@@ -44,17 +53,33 @@ export function ProjectsSection({ id }) {
           ))}
         </div>
 
-        {/* PROYECTOS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center items-center gap-6 md:gap-10">
-          {filteredProjects.map((p, i) => (
-            <ProjectCard key={i} {...p} />
-          ))}
-        </div>
+        {/* GRILLA DE PROYECTOS CON ANIMACIÓN */}
+        <motion.div 
+          layout
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
+        >
+          <AnimatePresence mode='popLayout'>
+            {filteredProjects.map((project) => (
+              <motion.div
+                layout
+                key={project.title}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4 }}
+                // Si es Kirtily y no hay filtro, hacerlo destacar
+                className={project.featured && activeFilter === 'All' ? "lg:col-span-2" : ""}
+              >
+                <ProjectCard {...project} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
 
         {filteredProjects.length === 0 && (
-          <p className="text-lg text-gray-500 mt-10">
-            No hay proyectos en esta categoría.
-          </p>
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center text-gray-400 mt-20">
+            No se encontraron proyectos con esta tecnología.
+          </motion.p>
         )}
       </div>
     </motion.section>

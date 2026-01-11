@@ -26,10 +26,11 @@ export function HomeSection({ id }) {
           <Image src="/logo.png" alt="Logo de CristhDeveloper" width={128} height={128} className="object-cover" priority />
         </div>
 
-        <h1 className="text-4xl md:text-5xl font-bold mb-2 text-[var(--color-fg-secondary)]">
-          Hola, soy Cristh
+        <h1 className="text-xl md:text-2xl font-bold mb-2 text-[var(--color-fg-secondary)]">
+          Hola, soy Cristhal Campos
         </h1>
-        <span className="text-xl text-gray-500 block">Desarrolladora web Fullstack</span>
+        <span className="text-xl text-gray-500 block">Fullstack Web Developer</span>
+        <p>Desarrollo aplicaciones web modernas con React, Next.js, Node.js, Express.js y mongoDB. He trabajado en proyectos, hackathons y mentorías técnicas, adaptándome a distintos stacks y resolviendo problemas desde el frontend hasta la base de datos.</p>
 
         <Link
           href="#about"

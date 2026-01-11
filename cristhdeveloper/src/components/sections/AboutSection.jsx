@@ -14,7 +14,7 @@ export function AboutSection({ id }) {
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <div className="max-w-lg md:max-w-3xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-5 md:mb-10 text-[var(--color-primary)]">
+        <h2 className="text-3xl md:text-4xl font-bold mb-5 md:mb-10 text-[var(--color-primary)]">
           Sobre Mí
         </h2>
 
@@ -32,12 +32,7 @@ export function AboutSection({ id }) {
 
           <div className="text-sm md:text-lg leading-relaxed text-left space-y-2">
             <p>
-              Hola, me llamo <strong className='text-[var(--color-fg-secondary)]'>Cristhal Campos</strong>.
-              Como Ingeniero Químico, aprendí el valor del pensamiento analítico y la resolución de problemas complejos.
-            </p>
-            <p>
-              Hace dos años, eso se fusionó con el mundo digital.
-              Desde entonces, he dedicado mi tiempo libre a formarme en el <strong className='text-[var(--color-fg-secondary)]'>Desarrollo Web FullStack</strong>, especialmente en el stack MERN (MongoDB, Express, React, Node.js) y Next.js + Supabase.
+              Soy desarrolladora web fullstack con experiencia especialmente en el stack MERN (MongoDB, Express, React, Node.js) y Next.js + Supabase. He desarrollado proyectos propios complejos, participado en hackathons y trabajado en sistemas reales de e-commerce y manejo de datos financieros. Además, he desempeñado roles de mentoría técnica, lo que ha fortalecido mi comunicación, liderazgo y pensamiento estructurado.
             </p>
           </div>
         </div>

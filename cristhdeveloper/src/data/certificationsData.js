@@ -24,6 +24,12 @@ export const certificationsData = [
     image: "/certifications/iacertificat.png",
   },
   {
+    title: "Mentoría con Python",
+    institution: "Universidad de los Andes",
+    date: "2025",
+    image: "/certifications/mentora.png",
+  },
+  {
     title: "WordPress",
     institution: "LEXPIN",
     date: "2024",

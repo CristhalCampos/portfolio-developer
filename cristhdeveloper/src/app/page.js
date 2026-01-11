@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 import { HomeSection  } from '../components/sections/HomeSection';
 import { AboutSection } from '../components/sections/AboutSection';
+import { ExperienceSection } from '../components/sections/ExperienceSection';
 import { ProjectsSection } from '../components/sections/ProjectsSection';
 import { CertificationsSection } from '../components/sections/CertificationsSection';
 import { ContactSection } from '../components/sections/ContactSection';
@@ -30,6 +31,7 @@ export default function SPAContainer() {
     <div className="snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth">
       <HomeSection id="home" />
       <AboutSection id="about" />
+      <ExperienceSection id="experience" />
       <ProjectsSection id="projects" />
       <CertificationsSection id="certifications" />
       <ContactSection id="contact" />
