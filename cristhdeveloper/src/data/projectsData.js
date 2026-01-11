@@ -27,7 +27,7 @@ export const projectsData = [
     description: 'Aplicación meteorológica en tiempo real con geolocalización.',
     context: 'Desarrollado para practicar el consumo de APIs RESTful y el manejo de estados complejos. La aplicación permite a los usuarios consultar condiciones climáticas exactas mediante la API de OpenWeatherMap.',
     role: 'Frontend Developer',
-    challenges: 'Implementación de Skeleton Loaders para mejorar la percepción de carga y manejo de errores robusto para búsquedas de ciudades inexistentes o fallos de red.',
+    challenges: 'Mejorar la percepción de carga y manejo de errores robusto para búsquedas de ciudades inexistentes o fallos de red.',
     image: '/projects/weather.png',
     repo: 'https://github.com/CristhalCampos/WeatherApp',
     tech: ['React', 'TailwindCSS', 'OpenWeather API'],

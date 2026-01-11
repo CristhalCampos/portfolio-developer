@@ -2,40 +2,24 @@
 
 import React from "react";
 import { icons } from "@/data/icons";
-import { useState, useEffect } from "react";
 
-const useWindowWidth = () => {
-  const [width, setWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0);
-
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return width;
-};
-
-const Icon = ({ name, size, className = "" }) => {
+const Icon = ({ name, className = "" }) => {
   const icon = icons[name];
-  const width = useWindowWidth();
 
   if (!icon) return null;
 
-  // Tamaño responsivo según el ancho de la ventana
-  let responsiveSize = size; // default
-  if (width < 640) responsiveSize = size - 25; // xs, sm
-  else if (width >= 640 && width < 768) responsiveSize = size - 15; // sm
-  // md y lg usan el tamaño original
-
   return (
     <div
-      className={`text-[var(--color-primary)] ${className}`}
-      style={{ width: responsiveSize, height: responsiveSize }}
+      className={`
+        text-[var(--color-primary)]
+        /* Definimos los tamaños por breakpoints de Tailwind */
+        w-[25px] h-[25px]       /* Tamaño por defecto (móvil < 640px) */
+        sm:w-[35px] sm:h-[35px] /* sm (640px - 767px) */
+        md:w-[50px] md:h-[50px] /* md y superiores (768px+) */
+        ${className}
+      `}
     >
       {React.cloneElement(icon, {
-        width: responsiveSize,
-        height: responsiveSize,
         className: "w-full h-full",
       })}
     </div>

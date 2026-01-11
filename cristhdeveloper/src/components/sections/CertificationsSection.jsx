@@ -4,55 +4,6 @@ import { certificationsData } from "@/data/certificationsData";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-// Sub-componente para la Tarjeta de Certificado
-const CertificationCard = ({ cert, index }) => (
-  <motion.div
-    variants={{
-      hidden: { opacity: 0, y: 20 },
-      visible: { opacity: 1, y: 0 }
-    }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="group w-full max-w-[280px] sm:max-w-[320px] bg-[var(--color-background)] rounded-2xl shadow-md overflow-hidden border border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/50 hover:shadow-xl hover:shadow-[var(--color-primary)]/10 transition-all duration-300 flex flex-col"
-  >
-    {/* Contenedor de Imagen */}
-    <div className="relative aspect-video w-full overflow-hidden bg-gray-100">
-      <Image
-        src={cert.image}
-        alt={`Certificado de ${cert.title}`}
-        fill
-        sizes="(max-width: 768px) 100vw, 33vw"
-        className="object-cover group-hover:scale-110 transition-transform duration-500"
-      />
-    </div>
-
-    {/* Detalles */}
-    <div className="p-5 text-left flex flex-col flex-grow justify-between">
-      <div>
-        <h3 className="text-lg font-bold text-[var(--color-secondary)] leading-tight mb-1">
-          {cert.title}
-        </h3>
-        <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">
-          {cert.institution}
-        </p>
-      </div>
-      
-      <div className="mt-4 flex items-center justify-between">
-        <span className="text-[10px] text-gray-400 font-semibold">{cert.date}</span>
-        {cert.link && (
-          <a
-            href={cert.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs font-bold text-[var(--color-primary)] hover:underline underline-offset-4"
-          >
-            Ver Credencial →
-          </a>
-        )}
-      </div>
-    </div>
-  </motion.div>
-);
-
 export function CertificationsSection({ id }) {
   return (
     <section id={id} className="min-h-screen py-20 px-6 flex flex-col items-center justify-center">
@@ -75,7 +26,51 @@ export function CertificationsSection({ id }) {
             variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
           >
             {certificationsData.map((cert, index) => (
-              <CertificationCard key={index} cert={cert} index={index} />
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group w-full max-w-[280px] sm:max-w-[320px] bg-[var(--color-background)] rounded-2xl shadow-md overflow-hidden border border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/50 hover:shadow-xl hover:shadow-[var(--color-primary)]/10 transition-all duration-300 flex flex-col"
+              >
+                {/* Contenedor de Imagen */}
+                <div className="relative aspect-video w-full overflow-hidden bg-gray-100">
+                  <Image
+                    src={cert.image}
+                    alt={`Certificado de ${cert.title}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+
+                {/* Detalles */}
+                <div className="p-5 text-left flex flex-col flex-grow justify-between">
+                  <div>
+                    <h3 className="text-lg font-bold text-[var(--color-secondary)] leading-tight mb-1">
+                      {cert.title}
+                    </h3>
+                    <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      {cert.institution}
+                    </p>
+                  </div>
+                  
+                  <div className="mt-4 flex items-center justify-between">
+                    <span className="text-[10px] text-gray-400 font-semibold">{cert.date}</span>
+                    {cert.link && (
+                      <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs font-bold text-[var(--color-primary)] hover:underline underline-offset-4"
+                      >
+                        Ver Credencial →
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </motion.div>
         ) : (

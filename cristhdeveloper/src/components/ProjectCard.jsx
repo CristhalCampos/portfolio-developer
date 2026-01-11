@@ -4,14 +4,14 @@ import { FaGithub, FaLightbulb, FaUserTie } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const ProjectCard = ({ 
-  title, description, image, repo, tech = [], 
-  context, challenges, role, status, featured 
+const ProjectCard = ({
+  title, description, image, repo, tech = [],
+  context, challenges, role, status, featured
 }) => {
   return (
     <div
       className={`relative rounded-3xl shadow-xl overflow-hidden flex flex-col
-                  bg-[var(--color-background)] border border-[var(--color-primary)]/10
+                  bg-[var(--color-background)] border border-[var(--color-primary)]/10 hover:scale-[1.04]
                   transition-all duration-500 ease-out hover:shadow-[var(--color-primary)]/20 hover:shadow-2xl
                   ${featured ? 'lg:flex-row lg:items-stretch w-full' : 'w-full max-w-md'}`}
     >

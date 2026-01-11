@@ -8,8 +8,8 @@ import { projectsData } from '../../data/projectsData';
 export function ProjectsSection({ id }) {
   const [activeFilter, setActiveFilter] = useState('All');
   
-  const uniqueTechs = useMemo(() => 
-    ['All', ...new Set(projectsData.flatMap((p) => p.tech))], 
+  const uniqueTechs = useMemo(() =>
+    ['All', ...new Set(projectsData.flatMap((p) => p.tech))],
   []);
 
   const filteredProjects = useMemo(() => {
@@ -17,7 +17,6 @@ export function ProjectsSection({ id }) {
     if (activeFilter !== 'All') {
       filtered = projectsData.filter((p) => p.tech.includes(activeFilter));
     }
-    // Ordenar para que los "featured" salgan primero
     return [...filtered].sort((a, b) => (b.featured ? 1 : -1));
   }, [activeFilter]);
 
@@ -54,7 +53,7 @@ export function ProjectsSection({ id }) {
         </div>
 
         {/* GRILLA DE PROYECTOS CON ANIMACIÓN */}
-        <motion.div 
+        <motion.div
           layout
           className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
         >
@@ -67,7 +66,6 @@ export function ProjectsSection({ id }) {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
-                // Si es Kirtily y no hay filtro, hacerlo destacar
                 className={project.featured && activeFilter === 'All' ? "lg:col-span-2" : ""}
               >
                 <ProjectCard {...project} />

@@ -8,32 +8,41 @@ export function TechnologiesSection({ id }) {
   return (
     <motion.div
       id={id}
-      className="w-full flex flex-col items-center justify-center text-center px-4 sm:px-8"
+      className="w-full flex flex-col items-center justify-center text-center px-4 py-10"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-6 text-[var(--color-secondary)]">
+      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-8 text-[var(--color-secondary)]">
         Tecnologías
       </h3>
 
-      <div className="overflow-hidden relative w-full">
+      {/* Contenedor con máscara de desvanecimiento en los bordes */}
+      <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_10%,_black_90%,transparent_100%)]">
         <motion.div
-          className="flex w-max gap-2 h-20 md:h-28"
+          className="flex w-max gap-4 py-4"
           animate={{ x: ['0%', '-50%'] }}
-          transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+          transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+          style={{ cursor: 'pointer' }}
+          whileHover={{ transition: { duration: 0 } }}
         >
           {[...techStackData, ...techStackData].map((tech, idx) => (
             <div
               key={idx}
               title={tech.name}
-              className="flex-shrink-0 w-16 md:w-24 h-16 md:h-24 flex flex-col items-center justify-center rounded-xl
-                        border border-[var(--color-primary)]/30 bg-[var(--color-foreground)]/10
-                        hover:scale-105 hover:shadow-lg hover:shadow-[var(--color-primary)]/40
-                        transition-all cursor-pointer"
+              className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 flex flex-col items-center justify-center rounded-2xl
+                        border border-[var(--color-primary)]/20 bg-[var(--color-background)]
+                        hover:border-[var(--color-primary)]/50 hover:scale-110
+                        transition-all duration-300 group shadow-sm hover:shadow-xl hover:shadow-[var(--color-primary)]/10"
             >
-              <Icon name={tech.name} size={50} />
-              <span className="mt-1 text-xs md:text-sm font-semibold text-[var(--color-primary)]">{tech.name}</span>
+              <Icon
+                name={tech.name}
+              />
+              
+              <span className="mt-2 text-[10px] md:text-xs font-bold text-gray-500 group-hover:text-[var(--color-primary)] uppercase tracking-tighter">
+                {tech.name}
+              </span>
             </div>
           ))}
         </motion.div>
