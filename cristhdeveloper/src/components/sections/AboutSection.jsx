@@ -38,13 +38,13 @@ export function AboutSection({ id }) {
 
           {/* Bloque de Texto */}
           <div className="flex-1 text-center md:text-left">
-            <p className="text-base md:text-xl leading-relaxed text-[var(--color-fg-secondary)]">
+            <p className="text-sm md:text-lg leading-relaxed text-[var(--color-fg-secondary)]">
               Soy desarrolladora web fullstack con experiencia especialmente en el stack MERN (MongoDB, Express, React, Node) y Next + Supabase.
             </p>
             
             <p className="mt-4 text-sm md:text-lg leading-relaxed text-[var(--color-fg-secondary)]">
-              He desarrollado proyectos propios complejos, participado en hackathons y trabajado en sistemas reales de e-commerce y manejo de datos financieros.
-              Además, he desempeñado roles de mentoría técnica, lo que ha fortalecido mi comunicación, liderazgo y pensamiento estructurado.
+              Mi trayectoria está definida por la curiosidad técnica y la capacidad de adaptación. He desarrollado proyectos personales y participado en hackathons, lo que me ha permitido dominar el flujo de sistemas de e-commerce y datos financieros.
+              Mi enfoque actual: Estoy evolucionando mi stack hacia soluciones empresariales robustas. Actualmente, trabajo en 'fincer5', un proyecto diseñado para profundizar en Angular y NestJS (TypeScript), implementando PostgreSQL y utilizando pnpm como motor de gestión de dependencias. Esta transición no solo amplía mis herramientas técnicas, sino que fortalece mi visión sobre la arquitectura de software de alto rendimiento.
             </p>
           </div>
         </div>

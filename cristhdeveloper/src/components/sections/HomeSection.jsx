@@ -30,7 +30,7 @@ export function HomeSection({ id }) {
           Hola, soy Cristhal Campos
         </h1>
         <span className="text-xl text-gray-500 block">Fullstack Web Developer</span>
-        <p>Desarrollo aplicaciones web modernas con React, Next.js, Node.js, Express.js y mongoDB. He trabajado en proyectos, hackathons y mentorías técnicas, adaptándome a distintos stacks y resolviendo problemas desde el frontend hasta la base de datos.</p>
+        <p>Desarrollo aplicaciones web modernas con React, Next.js, Node.js, Express.js, mongoDB, MySQL y Supabase. He trabajado en proyectos adaptándome a distintos stacks y resolviendo problemas desde el frontend hasta la base de datos.</p>
 
         <Link
           href="#about"

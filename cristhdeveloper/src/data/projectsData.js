@@ -1,5 +1,17 @@
 export const projectsData = [
-{
+  {
+    title: 'Localización y Monitoreo Sísmico',
+    description: 'Plataforma web de respuesta rápida. Centraliza dos servicios críticos: un buscador unificado de personas desaparecidas que consulta múltiples fuentes, y un panel de monitoreo sísmico en Venezuela',
+    context: 'Una plataforma web de respuesta rápida diseñada para asistir en situaciones de emergencia. El sistema centraliza dos servicios críticos: un buscador unificado de personas desaparecidas que consulta múltiples fuentes y APIs gubernamentales, y un panel de monitoreo sísmico con visualización geoespacial para el seguimiento de movimientos telúricos en Venezuela.',
+    role: 'Fullstack Developer',
+    challenges: 'Estandarización de datos. Debía combinar registros de bases de datos estructuradas (Supabase) con información no estructurada proveniente de APIs de respuesta a emergencias (textos con separadores).',
+    image: '/projects/venezuela2406.png',
+    repo: 'https://github.com/CristhalCampos/venezuela2406',
+    tech: ['Next.js', 'Typescript', 'TailwindCSS', 'Supabase'],
+    featured: true, // Para destacarlo
+    status: 'Completado'
+  },
+  {
     title: 'Social Network Kirtily',
     description: 'Red social moderna para compartir hobbies y creatividad.',
     context: 'Proyecto final de Programación Web Profesional. Buscaba resolver la falta de espacios dedicados exclusivamente a nichos creativos con escalabilidad.',
